@@ -106,7 +106,7 @@ def run_training_loop(config: dict, logger: Logger, args: argparse.Namespace):
             replay_buffer.insert(
                 action=action,
                 reward=reward,
-                next_observation=next_observation,
+                next_observation=next_observation[-1],
                 done=td_done,
             )
         else:
